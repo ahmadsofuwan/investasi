@@ -1,0 +1,21 @@
+CRITICAL - 2022-08-31 01:13:28 --> Encrypter needs a starter key.
+in SYSTEMPATH\Encryption\Encryption.php on line 124.
+ 1 SYSTEMPATH\Encryption\Encryption.php(124): CodeIgniter\Encryption\Exceptions\EncryptionException::forNeedsStarterKey()
+ 2 SYSTEMPATH\Config\Services.php(240): CodeIgniter\Encryption\Encryption->initialize(Object(Config\Encryption))
+ 3 SYSTEMPATH\Config\BaseService.php(253): CodeIgniter\Config\Services::encrypter()
+ 4 APPPATH\Controllers\Auth.php(14): CodeIgniter\Config\BaseService::__callStatic('encrypter', [])
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Auth->login()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-31 02:01:45 --> openssl_encrypt(): Argument #1 ($data) must be of type string, array given
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 62.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(62): openssl_encrypt([...], 'AES-256-CTR', 'q9õ1Örf∞eÁ¶⁄$DΩŸV…MÇl√;;‚xskf0`è[d·BRWó!Ì#ßtº¯Q:¯<Ï*', 1, '|–ö0√Ë∏Û≤]7Gﬁ7¥w')
+ 2 APPPATH\Controllers\BaseController.php(87): CodeIgniter\Encryption\Handlers\OpenSSLHandler->encrypt([...])
+ 3 APPPATH\Controllers\Auth.php(14): App\Controllers\BaseController->encrypter([...])
+ 4 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Auth->login()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
