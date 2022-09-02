@@ -15,4 +15,19 @@
   .menu-item {
     @apply py-2 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors;
   } */
+  .td-card {
+    @apply p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent;
+  }
+  .label-input {
+    @apply w-1/4 mx-auto text-left capitalize;
+  }
+  .bg-primary {
+    @apply bg-gradient-to-tl from-purple-700 to-pink-500;
+  }
+  .bg-warning {
+    @apply bg-gradient-to-tl from-red-500 to-yellow-400;
+  }
+  .bg-danger {
+    @apply bg-gradient-to-tl from-red-600 to-rose-400;
+  }
 }

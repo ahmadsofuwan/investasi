@@ -14,7 +14,7 @@ class Home extends BaseController
         }
         switch (session()->get('role')) {
             case 2:
-                echo 'role 2';
+                echo session()->get('logged_in');
                 break;
 
             default:
@@ -25,15 +25,17 @@ class Home extends BaseController
 
     public function index()
     {
-        echo 'Home::index';
-        die;
         switch (session()->get('role')) {
             case 1:
-                return view('admin/dashboard');
+                $data =  [
+                    'title' => 'Dashboard'
+                ];
+                return view('admin/dashboard', $data);
                 break;
-
+            case 2:
+                return view('customer/dashboard',['title' => 'dash customer']);
+                break;
             default:
-                echo session()->get('role');
                 return redirect()->to('/login');
                 break;
         }

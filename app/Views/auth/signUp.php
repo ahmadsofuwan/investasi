@@ -20,6 +20,7 @@
 
   <script src="<?= base_url('asset/tailwind/node_modules/sweetalert2/dist') ?>/sweetalert2.min.js"></script>
   <link rel="stylesheet" href="<?= base_url('asset/tailwind/node_modules/sweetalert2/dist') ?>/sweetalert2.min.css">
+  
   <link rel="stylesheet" href="<?= base_url('asset/tailwind/') ?>/output.css">
 
 </head>

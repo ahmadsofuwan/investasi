@@ -1,5 +1,14 @@
 </body>
-
+<?php if (!empty(session()->getFlashData('error'))) { ?>
+    <script>
+        Swal.fire({
+            title: 'Error!',
+            text: '<?= session()->getFlashData('error') ?>',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+    </script>
+<?php } ?>
 
 <!-- plugin for charts  -->
 <script src="<?= base_url('asset/soft-ui/build/') ?>/assets/js/plugins/chartjs.min.js" async></script>

@@ -43,7 +43,17 @@ abstract class BaseController extends Controller
     /**
      * Constructor.
      */
-    
+    protected $test; // Bad Name - What are we "Finding"?
+
+    public function __construct()
+    {
+
+        // Assign the model result to the badly named Class Property
+        $this->test = [
+            'testing' => '123',
+        ];
+    }
+
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
