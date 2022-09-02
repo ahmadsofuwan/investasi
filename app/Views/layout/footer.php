@@ -10,4 +10,7 @@
 <!-- main script file  -->
 <script src="<?= base_url('asset/soft-ui/build/') ?>/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
 
+<script src="<?= base_url('asset/js/jquery-3.6.1.min.js') ?>"></script>
+<script src="<?= base_url('asset/js/groubClass.js') ?>"></script>
+
 </html>

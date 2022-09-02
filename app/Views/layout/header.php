@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
     <link href="<?= base_url('asset/soft-ui/build/') ?>/assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
-
+    <link href="<?= base_url('asset/tailwind/') ?>/output.css" rel="stylesheet" />
 </head>
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">

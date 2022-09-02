@@ -4,12 +4,43 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+
+    function __construct()
+    {
+        parent::__construct();
+
+        if (!session()->get('logged_in')) {
+            return redirect()->to('/login');
+            die;
+        }
+        switch (session()->get('role')) {
+            case 2:
+                echo 'role 2';
+                break;
+
+            default:
+                # code...
+                break;
+        }
+    }
+
     public function index()
     {
-        return view('layout/content');
+        echo 'Home::index';
+        die;
+        switch (session()->get('role')) {
+            case 1:
+                return view('admin/dashboard');
+                break;
+
+            default:
+                echo session()->get('role');
+                return redirect()->to('/login');
+                break;
+        }
     }
-    public function coba()
+    public function customer()
     {
-        return print_r($this->getData('account', '*', [], 2));
+        return view('admin/dashboard');
     }
 }
