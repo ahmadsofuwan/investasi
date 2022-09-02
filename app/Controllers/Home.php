@@ -7,7 +7,6 @@ class Home extends BaseController
 
     function __construct()
     {
-        parent::__construct();
 
         if (!session()->get('logged_in')) {
             return redirect()->to('/login');
