@@ -8,7 +8,8 @@ class Ajax extends BaseController
     {
         switch ($_POST['action']) {
             case 'deleteItem':
-                # code...
+                $this->delete('item', array('pkey' => $_POST['pkey']));
+                echo json_encode(['status' => 'success']);
                 break;
             default:
                 echo json_encode(['status' => 'no Action']);

@@ -11,6 +11,7 @@
         <div class="flex-auto px-0 pt-0 pb-2">
           <div class="p-0 overflow-x-auto">
             <form method="POST" class="justify-center p-5 lg:p-10">
+              <input type="hidden" name="action" value="">
 
               <div class="flex flex-wrap w-full my-3 ">
                 <label class="label-input">name</label>
@@ -31,7 +32,7 @@
                 <input type="number" name="profit" value="<?= old('profit') ?>" class="rounded-xl w-1/2 mr-auto">
               </div>
 
-              <div class="flex flex-wrap justify-center w-full my-3 ">
+              <div class="flex flex-wrap justify-center w-full my-5 ">
                 <div class="flex justify-center w-1/3 mx-2">
                   <button type="submit" class="inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full">Submit</button>
                 </div>

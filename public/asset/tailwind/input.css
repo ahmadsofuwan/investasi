@@ -30,4 +30,7 @@
   .bg-danger {
     @apply bg-gradient-to-tl from-red-600 to-rose-400;
   }
+  .bg-success {
+    @apply bg-gradient-to-tl from-green-600 to-lime-400;
+  }
 }

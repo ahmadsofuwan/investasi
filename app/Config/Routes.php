@@ -42,7 +42,7 @@ $routes->get('/logout', 'Auth::logout');
 
 //admin..
 $routes->get('admin/itemList', 'Admin::itemList');
-$routes->get('admin/item', 'Admin::item');
+$routes->get('admin/item/', 'Admin::item');
 $routes->post('admin/item', 'Admin::itemInput');
 
 //ajax

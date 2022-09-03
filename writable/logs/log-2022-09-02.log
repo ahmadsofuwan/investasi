@@ -189,3 +189,37 @@ in APPPATH\Views\admin\itemList.php on line 28.
  8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-02 14:52:06 --> date(): Argument #2 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\admin\itemList.php on line 49.
+ 1 APPPATH\Views\admin\itemList.php(49): date('d / m / Y h:i', '2c323cr')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\itemList.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('admin/itemList', [], true)
+ 5 APPPATH\Controllers\Admin.php(21): view('admin/itemList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Admin->itemList()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-02 14:52:09 --> date(): Argument #2 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\admin\itemList.php on line 49.
+ 1 APPPATH\Views\admin\itemList.php(49): date('d / m / Y h:i', '2c323cr')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\itemList.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('admin/itemList', [], true)
+ 5 APPPATH\Controllers\Admin.php(21): view('admin/itemList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Admin->itemList()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-02 14:52:28 --> syntax error, unexpected variable "$this"
+in APPPATH\Controllers\Ajax.php on line 12.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ajax.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Ajax')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Ajax')
+ 4 SYSTEMPATH\CodeIgniter.php(854): class_exists('\\App\\Controllers\\Ajax', true)
+ 5 SYSTEMPATH\CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

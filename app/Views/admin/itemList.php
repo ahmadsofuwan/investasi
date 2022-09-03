@@ -50,9 +50,14 @@
                     </td>
                     <td class="td-card">
                       <div class="flex flex-wrap">
-                        <div class="flex justify-center w-1/3 mx-2">
+                        <div class="flex justify-center w-1/3 mx-1">
                           <button type="botton" class="btn-delete inline-block bg-danger text-white text-xs leading-tight capitalize rounded shadow-md  transition duration-150 ease-in-out w-fit p-1.5">
                             Delete
+                          </button>
+                        </div>
+                        <div class="flex justify-center w-1/3 mx-1">
+                          <button type="botton" class="btn-delete inline-block bg-success text-white text-xs leading-tight capitalize rounded shadow-md  transition duration-150 ease-in-out w-fit p-1.5">
+                            Edit
                           </button>
                         </div>
                       </div>
@@ -72,22 +77,45 @@
       $('.btn-delete').click(function() {
         var obj = $(this);
         var pkey = $(obj).closest('tr').attr('pkey');
+        Swal.fire({
+          title: 'yakin?',
+          text: "Data Akan Di Hapus Secara Permanen",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Ya, Hapus!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            $.ajax({
+                url: '<?= base_url('ajax') ?>',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                  action: 'deleteItem',
+                  pkey: pkey,
+                },
+              })
+              .done(function(status) {
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Berhasil Di Deleted',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                $(obj).closest('tr').remove();
+              }).fail(function() {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!',
+                })
+              })
 
-        $.ajax({
-            url: '<?= base_url('ajax') ?>',
-            type: 'POST',
-            dataType: 'json',
-            data: {
-              action: 'deleteItem',
-              pkey: pkey,
-            },
-          })
-          .done(function() {
-            console.log('success');
-          })
-          .fail(function() {
-            console.log('error');
-          })
+          }
+        })
+
 
 
 
