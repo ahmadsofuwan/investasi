@@ -18,7 +18,7 @@ class Auth extends BaseController
     {
         $username = $_POST['username'];
         $password = sha1($_POST['password']);
-        $data = $this->getData('account', 'pkey,role', array('username' => $username, 'password' => $password));
+        $data = $this->getData('account', 'pkey,role,name', array('username' => $username, 'password' => $password));
         if (count($data) <> 1) {
             $err =  'Username atau password salah';
             return redirect()->back()->withInput()->with('error', $err);
@@ -26,6 +26,7 @@ class Auth extends BaseController
         }
         session()->set([
             'id' => $data[0]['pkey'],
+            'name' => $data[0]['name'],
             'logged_in' => TRUE,
             'role' => $data[0]['role'],
         ]);
@@ -70,12 +71,12 @@ class Auth extends BaseController
         }
 
 
-
         $data = array(
             'username' => $username,
             'password' => $password,
             'name' => $name,
             'phone' => $wa,
+            'date_at' => strtotime('now'),
             //opasional
             'rekening' => $rekening,
             'bankname' => $bankName,
@@ -84,6 +85,7 @@ class Auth extends BaseController
         $id =  $this->insert('account', $data);
         session()->set([
             'id' => $id,
+            'name' => $name,
             'logged_in' => TRUE,
             'role' => 2,
         ]);

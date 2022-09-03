@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Admin extends BaseController
+class Customer extends BaseController
 {
     public function item($id = '')
     {

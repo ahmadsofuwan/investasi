@@ -47,11 +47,7 @@ abstract class BaseController extends Controller
 
     public function __construct()
     {
-
-        // Assign the model result to the badly named Class Property
-        $this->test = [
-            'testing' => '123',
-        ];
+        date_default_timezone_set('Asia/Jakarta');
     }
 
 

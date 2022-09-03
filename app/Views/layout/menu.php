@@ -14,7 +14,7 @@
         <a class="<?= $title == 'Item' ? 'menu-item-active' : 'item-menu'; ?>" href="<?= base_url('admin/itemList') ?>">
             <div class="card-icon-menu <?= $title == 'Item' ? 'icon-active' : ''; ?>">
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M19,16H5V8H19M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
+                    <path fill="currentColor" d="M12,18H6V14H12M21,14V12L20,7H4L3,12V14H4V20H14V14H18V20H20V14M20,4H4V6H20V4Z" />
                 </svg>
             </div>
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Item</span>
@@ -22,25 +22,17 @@
     </li>
 
     <li class="card-menu">
-        <a class="item-menu" href="<?= base_url('asset/soft-ui/build/') ?>/pages/billing.html">
-            <div class="card-icon-menu">
-                <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <title>credit-card</title>
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                            <g transform="translate(1716.000000, 291.000000)">
-                                <g transform="translate(453.000000, 454.000000)">
-                                    <path class="fill-slate-800 opacity-60" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
-                                    <path class="fill-slate-800" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
+        <a class="<?= $title == 'Widraw' ? 'menu-item-active' : 'item-menu'; ?>" href="<?= base_url('admin/widrawList') ?>">
+            <div class="card-icon-menu <?= $title == 'Widraw' ? 'icon-active' : ''; ?>">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
                 </svg>
             </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Billing</span>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Widraw</span>
         </a>
     </li>
+
+
 
     <li class="card-menu">
         <a class="item-menu" href="<?= base_url('asset/soft-ui/build/') ?>/pages/virtual-reality.html">

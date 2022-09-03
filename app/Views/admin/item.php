@@ -10,26 +10,27 @@
         </div>
         <div class="flex-auto px-0 pt-0 pb-2">
           <div class="p-0 overflow-x-auto">
-            <form method="POST" class="justify-center p-5 lg:p-10">
-              <input type="hidden" name="action" value="">
+            <form method="POST" action="<?= base_url('admin/item') ?>" class="justify-center p-5 lg:p-10">
+              <input type="hidden" name="action" value="<?= isset($data) ? 'update' : 'insert' ?>">
+              <input type="hidden" name="pkey" value="<?= isset($data) ? $data['pkey'] : '' ?>">
 
               <div class="flex flex-wrap w-full my-3 ">
                 <label class="label-input">name</label>
-                <input type="text" name="name" value="<?= old('name') ?>" class="rounded-xl w-1/2 mr-auto">
+                <input type="text" name="name" value="<?= old('name') ?><?= isset($data) ? $data['name'] : '' ?>" class="rounded-xl w-1/2 mr-auto">
               </div>
               <div class="flex flex-wrap w-full my-3 ">
                 <label class="label-input">price</label>
-                <input type="number" name="price" value="<?= old('price') ?>" class="rounded-xl w-1/2 mr-auto">
+                <input type="number" name="price" value="<?= old('price') ?><?= isset($data) ? $data['price'] : '' ?>" class="rounded-xl w-1/2 mr-auto">
               </div>
 
               <div class="flex flex-wrap w-full my-3">
                 <label class="label-input">expired time</label>
-                <input type="number" name="expired" value="<?= old('expired') ?>" class="rounded-xl w-1/2 mr-auto">
+                <input type="number" name="expired" value="<?= old('expired') ?><?= isset($data) ? $data['expired'] : '' ?>" class="rounded-xl w-1/2 mr-auto">
               </div>
 
               <div class="flex flex-wrap w-full my-3">
                 <label class="label-input">percentage profit</label>
-                <input type="number" name="profit" value="<?= old('profit') ?>" class="rounded-xl w-1/2 mr-auto">
+                <input type="number" name="profit" value="<?= old('profit') ?><?= isset($data) ? $data['profit'] : '' ?>" class="rounded-xl w-1/2 mr-auto">
               </div>
 
               <div class="flex flex-wrap justify-center w-full my-5 ">

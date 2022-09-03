@@ -8,12 +8,7 @@
       <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
         <div class="px-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent flex h-12">
           <div class="w-1/2 pt-5 ">
-            <h6 class="font-semibold text-10xl">Item List</h6>
-          </div>
-          <div class="w-1/2 flex justify-end pr-5">
-            <svg viewBox="0 0 24 24" class="stroke-2" onclick="location.replace('<?= base_url('admin/item') ?>')">
-              <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-            </svg>
+            <h6 class="font-semibold text-10xl">Widraw List</h6>
           </div>
         </div>
         <div class="flex-auto px-0 pt-0 pb-2">
@@ -21,35 +16,28 @@
             <table class="items-center justify-center w-full mb-0 align-top border-gray-200 text-slate-500">
               <thead class="align-bottom">
                 <tr>
+                  <th class="head-table">username</th>
                   <th class="head-table">Name</th>
-                  <th class="head-table">Price</th>
-                  <th class="head-table">Expired</th>
-                  <th class="head-table">Profit</th>
-                  <th class="head-table">Created</th>
-                  <th class="head-table">Created Date</th>
+                  <th class="head-table">Widraw</th>
+                  <th class="head-table">Date</th>
                   <th class="head-table">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <?php foreach ($dataList as $key => $value) { ?>
                   <tr pkey="<?= $value['pkey'] ?>">
+
                     <td class="td-card">
-                      <?= $value['name'] ?>
-                    </td>
-                    <td class="td-card">
-                      <?= number_format($value['price']) ?>
-                    </td>
-                    <td class="td-card">
-                      <?= number_format($value['expired']) ?>
-                    </td>
-                    <td class="td-card">
-                      <?= number_format($value['profit']) ?>%
+                      <?= $value['username'] ?>
                     </td>
                     <td class="td-card">
                       <?= $value['accountname'] ?>
                     </td>
                     <td class="td-card">
-                      <?= date('d / m / Y H:i', $value['date_at']) ?>
+                      <?= number_format($value['windraw']) ?>
+                    </td>
+                    <td class="td-card">
+                      <?= date('d / m / Y h:i', $value['date_at']) ?>
                     </td>
                     <td class="td-card">
                       <div class="flex flex-wrap">

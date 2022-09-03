@@ -43,7 +43,11 @@ $routes->get('/logout', 'Auth::logout');
 //admin..
 $routes->get('admin/itemList', 'Admin::itemList');
 $routes->get('admin/item/', 'Admin::item');
+$routes->get('admin/item/(:hash)', 'Admin::item/$1');
 $routes->post('admin/item', 'Admin::itemInput');
+
+$routes->get('admin/widrawList', 'Admin::widrawList');
+
 
 //ajax
 $routes->post('ajax', 'Ajax::index');
