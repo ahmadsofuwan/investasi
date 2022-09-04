@@ -2,26 +2,41 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+
 class Customer extends BaseController
 {
-    public function item($id = '')
+    public function __construct()
     {
-        $data['title'] = 'Item';
-        if (!empty($id)) {
-            $data['data'] = $this->getData('item', '*', array('pkey' => $id))[0];
-            $_POST['name'] = 'testing';
-        }
-        return view('admin/item', $data);
+        $this->saldo = $this->getData('account', 'saldo', array('pkey' => session()->get('id')))[0]['saldo'];
+        session()->set(['saldo' => $this->saldo]);
     }
 
+    public function index()
+    {
+        $item =  $this->getData('item');
+        $data = [
+            'title' => 'Dashboard',
+            'name' => 'ahmad sofuwan',
+            'item' => $item,
+        ];
+        return view('customer/dashboard', $data);
+    }
     public function itemList()
     {
+        $select = 'customer_item.*,
+        item.name as name,
+        item.profit as profit,
+        item.price as price,
+        item.expired as expired,
+        ';
         $join = array(
-            array('account', 'account.pkey=item.create_at', 'left')
+            array('item', 'item.pkey=customer_item.itemkey', 'left'),
         );
+        $data['item'] = $this->getData('customer_item', $select, array('refkey' => session()->get('id')), '', $join);
         $data['title'] = 'Item';
-        $data['dataList'] = $this->getData('item', 'item.*,account.name as accountname', array(), '', $join);
-        return view('admin/itemList', $data);
+        return view('customer/item', $data);
     }
 
     public function itemInput()

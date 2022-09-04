@@ -4,6 +4,21 @@ namespace App\Controllers;
 
 class Admin extends BaseController
 {
+
+    public function index()
+    {
+        $customer = $this->getData('account', 'pkey', array('role' => 2));
+        $widraw = $this->getData('widraw', 'pkey', array('status' => 0));
+        $item = $this->getData('item', 'pkey');
+        $data =  [
+            'title' => 'Dashboard',
+            'countCustomer' => count($customer),
+            'countWidraw' => count($widraw),
+            'countItem' => count($item),
+        ];
+        return view('admin/dashboard', $data);
+    }
+
     public function item($id = '')
     {
         $data['title'] = 'Item';

@@ -43,7 +43,6 @@ abstract class BaseController extends Controller
     /**
      * Constructor.
      */
-    protected $test; // Bad Name - What are we "Finding"?
 
     public function __construct()
     {
@@ -61,6 +60,8 @@ abstract class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
     }
 
+
+    //DB
     public function getData($tbl, $row = '*', $arrWhere = array(), $limit = '', $arrJoin = array(), $orderBy = '')
     {
         $db = model('App\Models\Base_model', false);
@@ -93,5 +94,13 @@ abstract class BaseController extends Controller
     {
         $encrypter = \Config\Services::encrypter();
         return $encrypter->encrypt($string);
+    }
+
+    public function logined()
+    {
+        if (!session()->get('logged_in')) {
+            return redirect()->to('/login');
+            die;
+        }
     }
 }

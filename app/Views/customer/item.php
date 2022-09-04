@@ -2,13 +2,8 @@
   <?= $this->section('content') ?>
   <div class="w-full px-6 py-6 mx-auto">
       <!-- row 1 -->
-      <div class="flex flex-wrap mx-3 xl:mt-5">
+      <div class="flex flex-wrap mx-3">
           <?php foreach ($item as $key => $value) { ?>
-              <?php
-                $bonus = ($value['price'] / 100);
-                $bonus = ($bonus * $value['profit']) / $value['expired'];
-                ?>
-
 
               <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
                   <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
@@ -21,13 +16,7 @@
                                           $<?= number_format($value['price']) ?>
                                       </h5>
                                       <div class="text-sm">
-                                          <span class="text-pink-500 font-bold">Profit</span> <span class="leading-normal text-sm text-lime-500 font-semibold"><?= number_format($value['profit']) ?>%</span>
-                                      </div>
-                                      <div class="text-xs">
-                                          <span class="text-pink-500 font-bold">Bonus</span> <span class="leading-normal text-xs text-lime-500 font-semibold">$<?= number_format($bonus) ?></span> / <span class="leading-normal text-xs text-orange-500 font-semibold">month</span>
-                                      </div>
-                                      <div class="text-sm">
-                                          <span class="text-pink-500 font-bold">Contract</span> <span class="leading-normal text-sm text-lime-500 font-semibold"><?= $value['expired'] ?> </span><span class="leading-normal text-sm text-orange-500 font-semibold">month</span>
+                                          <span class="text-pink-500 font-bold">Profit</span> <span class="leading-normal text-sm text-lime-500 font-semibold">55%</span>
                                       </div>
 
                                   </div>

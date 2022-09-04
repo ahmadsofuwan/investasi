@@ -1,6 +1,6 @@
 <ul class="flex flex-col pl-0 mb-0" id="menu">
     <li class="card-menu">
-        <a class="<?= $title == 'Dashboard' ? 'menu-item-active' : 'item-menu'; ?> " href="<?= base_url('/') ?>">
+        <a class="<?= $title == 'Dashboard' ? 'menu-item-active' : 'item-menu'; ?> " href="<?= base_url('dashboard') ?>">
             <div class="card-icon-menu <?= $title == 'Dashboard' ? 'icon-active' : ''; ?> ">
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M21,16V4H3V16H21M21,2A2,2 0 0,1 23,4V16A2,2 0 0,1 21,18H14V20H16V22H8V20H10V18H3C1.89,18 1,17.1 1,16V4C1,2.89 1.89,2 3,2H21M5,6H14V11H5V6M15,6H19V8H15V6M19,9V14H15V9H19M5,12H9V14H5V12M10,12H14V14H10V12Z" />
@@ -11,13 +11,13 @@
     </li>
 
     <li class="card-menu">
-        <a class="<?= $title == 'Item' ? 'menu-item-active' : 'item-menu'; ?>" href="<?= base_url('admin/itemList') ?>">
+        <a class="<?= $title == 'Item' ? 'menu-item-active' : 'item-menu'; ?>" href="<?= base_url('item') ?>">
             <div class="card-icon-menu <?= $title == 'Item' ? 'icon-active' : ''; ?>">
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M12,18H6V14H12M21,14V12L20,7H4L3,12V14H4V20H14V14H18V20H20V14M20,4H4V6H20V4Z" />
                 </svg>
             </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Item</span>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Your Item</span>
         </a>
     </li>
 

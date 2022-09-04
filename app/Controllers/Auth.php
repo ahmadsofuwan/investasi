@@ -18,7 +18,7 @@ class Auth extends BaseController
     {
         $username = $_POST['username'];
         $password = sha1($_POST['password']);
-        $data = $this->getData('account', 'pkey,role,name', array('username' => $username, 'password' => $password));
+        $data = $this->getData('account', 'pkey,role,name,saldo', array('username' => $username, 'password' => $password));
         if (count($data) <> 1) {
             $err =  'Username atau password salah';
             return redirect()->back()->withInput()->with('error', $err);
@@ -29,9 +29,20 @@ class Auth extends BaseController
             'name' => $data[0]['name'],
             'logged_in' => TRUE,
             'role' => $data[0]['role'],
+            'saldo' => $data[0]['saldo'],
         ]);
-
-        return redirect()->to('/');
+        switch ($data[0]['role']) {
+            case 1:
+                return redirect()->to('/admin');
+                break;
+            case 2:
+                return redirect()->to('/dashboard');
+                break;
+            default:
+                return redirect()->to('/login');
+                # code...
+                break;
+        }
     }
 
     public function signUp()

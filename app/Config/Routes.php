@@ -20,7 +20,7 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+$routes->set404Override(false);
 
 // raouter=================================================>
 
@@ -30,7 +30,6 @@ $routes->set404Override();
 
 
 
-$routes->get('/', 'Home::index');
 
 $routes->get('/signup', 'Auth::signUp');
 $routes->post('/signup', 'Auth::signUpAction');
@@ -41,16 +40,24 @@ $routes->post('/login', 'Auth::loginAction');
 $routes->get('/logout', 'Auth::logout');
 
 //admin..
-$routes->get('admin/itemList', 'Admin::itemList');
-$routes->get('admin/item/', 'Admin::item');
-$routes->get('admin/item/(:hash)', 'Admin::item/$1');
-$routes->post('admin/item', 'Admin::itemInput');
-
-$routes->get('admin/widrawList', 'Admin::widrawList');
-
+$routes->group('admin', ['filter' => 'auth-admin'], static function ($routes) {
+    $routes->get('/', 'Admin::index');
+    $routes->get('itemList', 'Admin::itemList');
+    $routes->get('item/', 'Admin::item');
+    $routes->get('item/(:any)', 'Admin::item/$1');
+    $routes->post('item', 'Admin::itemInput');
+    $routes->get('widrawList', 'Admin::widrawList');
+});
 
 //ajax
 $routes->post('ajax', 'Ajax::index');
+
+
+//customer
+$routes->group('/', static function ($routes) {
+    $routes->get('dashboard', 'Customer::index');
+    $routes->get('item', 'Customer::itemList');
+});
 
 
 
